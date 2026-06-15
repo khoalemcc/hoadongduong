@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-color: #0f52ba; /* Premium Sapphire Blue */
+    --primary-container: #e0f2fe; /* Light sky blue container */
+    --bg-color: #ffffff; /* Clean white background */
+    --surface-color: #f8fafc; /* Premium slate surface */
+    --text-color: #0f172a; /* Slate 900 for modern readability */
+  }
+
+  .theme-botanical {
+    --primary-color: #0f52ba;
+    --primary-container: #e0f2fe;
+    --bg-color: #ffffff;
+    --surface-color: #f8fafc;
+    --text-color: #0f172a;
+  }
+
+  .theme-deepsea {
+    --primary-color: #0f52ba;   
+    --primary-container: #e0f2fe;
+    --bg-color: #ffffff;        
+    --surface-color: #f8fafc;   
+    --text-color: #0f172a;
+  }
+
+  .theme-midnight {
+    --primary-color: #a78bfa;
+    --primary-container: #4c1d95;
+    --bg-color: #1a1025;   /* Deep purple tint */
+    --surface-color: #2b1b3d; /* Lighter purple tint */
+    --text-color: #f8fafc;
+  }
+
+  .theme-earth {
+    --primary-color: #fb923c;
+    --primary-container: #7c2d12;
+    --bg-color: #1a1310;   /* Deep terracotta tint */
+    --surface-color: #33231e; /* Lighter terracotta tint */
+    --text-color: #fef3c7;
+  }
+
+  body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    letter-spacing: 0;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0;
+    line-height: 1.18;
+    text-wrap: balance;
+  }
+
+  p, li {
+    line-height: 1.7;
+  }
+
+  button, input, textarea, select {
+    font: inherit;
+  }
+}
+
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.hero-gradient {
+    background: linear-gradient(145deg, #0f52ba 0%, #0747a6 100%);
+}
+
+.tonal-shift {
+    transition: background-color 0.3s ease;
+}
+
+.no-line-rule { border: none !important; }
+
+/* Fade-in utility */
+@layer utilities {
+  .fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* Scroll Reveal Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-scale.active {
+  opacity: 1;
+  transform: scale(1);
+}
